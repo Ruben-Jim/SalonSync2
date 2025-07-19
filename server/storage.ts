@@ -155,6 +155,7 @@ export class MemStorage implements IStorage {
       ...insertService, 
       id,
       requiresDownPayment: insertService.requiresDownPayment ?? false,
+      downPaymentAmount: insertService.downPaymentAmount ?? null,
       imageUrl: insertService.imageUrl ?? null
     };
     this.services.set(id, service);
