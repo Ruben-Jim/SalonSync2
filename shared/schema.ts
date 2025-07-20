@@ -1,4 +1,5 @@
 import { pgTable, text, serial, integer, boolean, timestamp, decimal } from "drizzle-orm/pg-core";
+import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -90,3 +91,31 @@ export interface AppointmentWithDetails extends Appointment {
   service: Service;
   staff: Staff;
 }
+
+// Relations
+export const servicesRelations = relations(services, ({ many }) => ({
+  appointments: many(appointments),
+}));
+
+export const staffRelations = relations(staff, ({ many }) => ({
+  appointments: many(appointments),
+}));
+
+export const clientsRelations = relations(clients, ({ many }) => ({
+  appointments: many(appointments),
+}));
+
+export const appointmentsRelations = relations(appointments, ({ one }) => ({
+  client: one(clients, {
+    fields: [appointments.clientId],
+    references: [clients.id],
+  }),
+  service: one(services, {
+    fields: [appointments.serviceId],
+    references: [services.id],
+  }),
+  staff: one(staff, {
+    fields: [appointments.staffId],
+    references: [staff.id],
+  }),
+}));

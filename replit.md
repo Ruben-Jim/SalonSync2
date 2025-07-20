@@ -29,9 +29,11 @@ Preferred communication style: Simple, everyday language.
 
 ### Database Architecture
 - **ORM**: Drizzle ORM with PostgreSQL dialect
-- **Migration**: Schema-first approach with migrations in `./migrations`
-- **Connection**: Neon Database serverless connection
-- **Tables**: Services, Staff, Clients, and Appointments with proper relationships
+- **Migration**: Schema-first approach using `npm run db:push`
+- **Connection**: Neon Database serverless connection via `@neondatabase/serverless`
+- **Storage**: DatabaseStorage class replacing in-memory storage
+- **Tables**: Services, Staff, Clients, and Appointments with proper relationships and foreign key constraints
+- **Relations**: Fully defined using Drizzle's `relations` for type-safe joins
 
 ## Key Components
 
@@ -119,3 +121,6 @@ The architecture prioritizes developer experience with TypeScript throughout, mo
 - ✅ Frontend booking wizard with 3-step process working seamlessly
 - ✅ Payment flow supports Apple Pay, Google Pay, and debit/credit cards through Stripe Elements
 - ✅ Appointment management system displaying all bookings with status tracking
+- ✅ **Database integration completed**: Migrated from in-memory storage to PostgreSQL
+- ✅ All data now persisted with proper relationships and foreign key constraints
+- ✅ Database initialized with sample services and staff data automatically
