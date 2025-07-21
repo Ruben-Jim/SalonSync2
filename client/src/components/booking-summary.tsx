@@ -39,7 +39,7 @@ export default function BookingSummary({
         <div className="mb-4 pb-4 border-b border-gray-100">
           <div className="flex justify-between items-start mb-2">
             <span className="font-medium text-charcoal">{selectedService.name}</span>
-            <span className="text-rose-primary font-bold">${selectedService.price}</span>
+            <span className="text-pink-500 font-bold">${selectedService.price}</span>
           </div>
           <p className="text-sm text-gray-600">
             {Math.floor(selectedService.duration / 60)}h {selectedService.duration % 60}m
@@ -89,7 +89,7 @@ export default function BookingSummary({
             <>
               <div className="flex justify-between">
                 <span className="text-gray-600">Down Payment:</span>
-                <span className="text-rose-primary font-medium">${downPayment.toFixed(2)}</span>
+                <span className="text-pink-500 font-medium">${downPayment.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-sm text-gray-500">
                 <span>Remaining (pay in person):</span>

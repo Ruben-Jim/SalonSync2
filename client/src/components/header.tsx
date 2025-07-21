@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <div className="flex items-center space-x-3 cursor-pointer">
-              <div className="w-10 h-10 bg-gradient-to-br from-rose-primary to-rose-light rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-400 rounded-full flex items-center justify-center">
                 <Scissors className="text-white h-5 w-5" />
               </div>
               <h1 className="text-xl font-bold text-charcoal">Bella Beauty</h1>
@@ -21,8 +21,8 @@ export default function Header() {
             <Link href="/">
               <span className={`font-medium transition-colors ${
                 location === "/" 
-                  ? "text-rose-primary border-b-2 border-rose-primary pb-1" 
-                  : "text-gray-600 hover:text-rose-primary"
+                  ? "text-pink-500 border-b-2 border-pink-500 pb-1" 
+                  : "text-gray-600 hover:text-pink-500"
               }`}>
                 Book Now
               </span>
@@ -31,8 +31,8 @@ export default function Header() {
             <Link href="/appointments">
               <span className={`font-medium transition-colors ${
                 location === "/appointments" 
-                  ? "text-rose-primary border-b-2 border-rose-primary pb-1" 
-                  : "text-gray-600 hover:text-rose-primary"
+                  ? "text-pink-500 border-b-2 border-pink-500 pb-1" 
+                  : "text-gray-600 hover:text-pink-500"
               }`}>
                 Appointments
               </span>

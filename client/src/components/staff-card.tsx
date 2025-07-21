@@ -12,7 +12,7 @@ export default function StaffCard({ staff, selected, onClick }: StaffCardProps) 
   return (
     <Card 
       className={`cursor-pointer transition-all duration-200 ${
-        selected ? "border-rose-primary bg-rose-light bg-opacity-10" : "hover:border-rose-primary"
+        selected ? "border-pink-500 bg-pink-50" : "hover:border-pink-500"
       }`}
       onClick={onClick}
     >

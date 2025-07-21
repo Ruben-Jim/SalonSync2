@@ -93,7 +93,7 @@ export default function AppointmentCard({ appointment }: AppointmentCardProps) {
               {appointment.status.charAt(0).toUpperCase() + appointment.status.slice(1)}
             </Badge>
             <div className="flex space-x-2">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-rose-primary">
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-pink-500">
                 <Edit className="h-4 w-4" />
               </Button>
               <Button 

@@ -47,7 +47,7 @@ export default function Appointments() {
                   </SelectContent>
                 </Select>
                 <Link href="/">
-                  <Button className="bg-gradient-to-r from-rose-primary to-rose-light hover:shadow-lg">
+                  <Button className="bg-gradient-to-r from-pink-500 to-pink-400 hover:shadow-lg text-white">
                     <Plus className="mr-2 h-4 w-4" />
                     New Appointment
                   </Button>
@@ -59,7 +59,7 @@ export default function Appointments() {
               <div className="text-center py-12">
                 <p className="text-gray-500 mb-4">No appointments found</p>
                 <Link href="/">
-                  <Button className="bg-gradient-to-r from-rose-primary to-rose-light">
+                  <Button className="bg-gradient-to-r from-pink-500 to-pink-400 text-white">
                     Book Your First Appointment
                   </Button>
                 </Link>

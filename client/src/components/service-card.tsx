@@ -11,7 +11,7 @@ export default function ServiceCard({ service, selected, onClick }: ServiceCardP
   return (
     <Card 
       className={`cursor-pointer transition-all duration-200 hover:shadow-md ${
-        selected ? "border-rose-primary bg-rose-light bg-opacity-10" : "hover:border-rose-primary"
+        selected ? "border-pink-500 bg-pink-50" : "hover:border-pink-500"
       }`}
       onClick={onClick}
     >
@@ -24,7 +24,7 @@ export default function ServiceCard({ service, selected, onClick }: ServiceCardP
         <h5 className="font-semibold text-charcoal mb-2">{service.name}</h5>
         <p className="text-gray-600 text-sm mb-3">{service.description}</p>
         <div className="flex justify-between items-center mb-2">
-          <span className="text-rose-primary font-bold">${service.price}</span>
+          <span className="text-pink-500 font-bold">${service.price}</span>
           <span className="text-gray-500 text-sm">{Math.floor(service.duration / 60)}h {service.duration % 60}m</span>
         </div>
         {service.requiresDownPayment && (

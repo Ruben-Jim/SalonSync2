@@ -138,7 +138,7 @@ export default function BookingWizard() {
                     key={step}
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                       step <= currentStep
-                        ? "bg-rose-primary text-white"
+                        ? "bg-pink-500 text-white"
                         : "bg-gray-200 text-gray-500"
                     }`}
                   >
@@ -149,7 +149,7 @@ export default function BookingWizard() {
             </div>
             <div className="h-2 bg-gray-200 rounded-full">
               <div
-                className="h-2 bg-gradient-to-r from-rose-primary to-rose-light rounded-full transition-all duration-300"
+                className="h-2 bg-gradient-to-r from-pink-500 to-pink-400 rounded-full transition-all duration-300"
                 style={{ width: `${(currentStep / 3) * 100}%` }}
               />
             </div>
@@ -205,7 +205,7 @@ export default function BookingWizard() {
 
               <Button
                 onClick={handleNextStep}
-                className="w-full bg-gradient-to-r from-rose-primary to-rose-light hover:shadow-lg"
+                className="w-full bg-gradient-to-r from-pink-500 to-pink-400 hover:shadow-lg text-white"
               >
                 Continue to Staff Selection
               </Button>
@@ -256,7 +256,7 @@ export default function BookingWizard() {
                           variant={selectedTime === time ? "default" : "outline"}
                           size="sm"
                           onClick={() => setSelectedTime(time)}
-                          className={selectedTime === time ? "bg-rose-primary hover:bg-rose-primary" : ""}
+                          className={selectedTime === time ? "bg-pink-500 hover:bg-pink-600 text-white" : ""}
                         >
                           {time}
                         </Button>
@@ -272,7 +272,7 @@ export default function BookingWizard() {
                 </Button>
                 <Button
                   onClick={handleNextStep}
-                  className="flex-1 bg-gradient-to-r from-rose-primary to-rose-light hover:shadow-lg"
+                  className="flex-1 bg-gradient-to-r from-pink-500 to-pink-400 hover:shadow-lg text-white"
                 >
                   Continue to Details
                 </Button>
@@ -354,7 +354,7 @@ export default function BookingWizard() {
                     <Button
                       type="submit"
                       disabled={createAppointmentMutation.isPending}
-                      className="flex-1 bg-gradient-to-r from-rose-primary to-rose-light hover:shadow-lg"
+                      className="flex-1 bg-gradient-to-r from-pink-500 to-pink-400 hover:shadow-lg text-white"
                     >
                       {createAppointmentMutation.isPending ? "Booking..." : "Book Appointment"}
                     </Button>

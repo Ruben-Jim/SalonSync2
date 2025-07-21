@@ -83,7 +83,7 @@ const CheckoutForm = ({ appointmentId }: { appointmentId: number }) => {
       <Button
         type="submit"
         disabled={!stripe || isProcessing}
-        className="w-full bg-gradient-to-r from-rose-primary to-rose-light hover:shadow-lg"
+        className="w-full bg-gradient-to-r from-pink-500 to-pink-400 hover:shadow-lg text-white"
       >
         <Lock className="mr-2 h-4 w-4" />
         {isProcessing ? "Processing..." : "Secure Payment"}
@@ -158,7 +158,7 @@ export default function Checkout() {
                 </div>
                 <div className="flex justify-between font-semibold pt-2 border-t">
                   <span>Down Payment:</span>
-                  <span className="text-rose-primary">${appointment.downPaymentAmount}</span>
+                  <span className="text-pink-500">${appointment.downPaymentAmount}</span>
                 </div>
               </div>
             </div>
