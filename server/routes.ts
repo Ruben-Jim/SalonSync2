@@ -65,8 +65,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ message: "Service not found" });
       }
 
+      // Convert time format (e.g., "9:00 AM" to "09:00")
+      const convertTo24Hour = (time12: string) => {
+        const [time, modifier] = time12.split(' ');
+        let [hours, minutes] = time.split(':');
+        if (hours === '12') {
+          hours = modifier === 'AM' ? '00' : '12';
+        } else if (modifier === 'PM') {
+          hours = String(parseInt(hours, 10) + 12);
+        }
+        return `${hours.padStart(2, '0')}:${minutes}`;
+      };
+
       // Create appointment date
-      const appointmentDateTime = new Date(`${bookingData.appointmentDate}T${bookingData.appointmentTime}`);
+      const time24 = convertTo24Hour(bookingData.appointmentTime);
+      const appointmentDateTime = new Date(`${bookingData.appointmentDate}T${time24}:00`);
       
       const downPaymentAmount = service.requiresDownPayment ? parseFloat(service.downPaymentAmount || "0") : 0;
       const totalAmount = parseFloat(service.price);
